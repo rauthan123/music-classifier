@@ -1,3 +1,4 @@
+#import libraries
 import operator
 import os
 import pickle
@@ -8,7 +9,7 @@ import scipy.io.wavfile as wav
 from python_speech_features import mfcc
 
 dataset = []
-
+#Define required functions for accuracy, neratest neighbours
 def getAccuracy(testSet, predictions):
     correct = 0
     for x in range(len(testSet)):
