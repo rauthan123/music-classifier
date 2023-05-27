@@ -71,7 +71,7 @@ i = 1
 for folder in os.listdir("./music/"):
     results[i] = folder
     i += 1
-(rate, sig) = wav.read("blues.00017.wav")
+(rate, sig) = wav.read("blues.00017.wav") # replace file name with file you want to test
 mfcc_feat = mfcc(sig, rate, winlen=0.020, appendEnergy=False)
 covariance = np.cov(np.matrix.transpose(mfcc_feat))
 mean_matrix = mfcc_feat.mean(0)
