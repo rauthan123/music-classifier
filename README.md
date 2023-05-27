@@ -1,1 +1,1 @@
-# muisc-classifier
+# music-classifier using deeping learning(KNN)
