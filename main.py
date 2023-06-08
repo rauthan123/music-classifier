@@ -16,7 +16,7 @@ def getAccuracy(testSet, predictions):
         if testSet[x][-1] == predictions[x]:
             correct += 1
     return 1.0 * correct / len(testSet)
-#function to check model's accuracy and performance 
+#function to load dataset
 def loadDataset(filename):
     with open("my.dat", 'rb') as f:
         while True:
@@ -29,7 +29,7 @@ def loadDataset(filename):
 
 loadDataset("my.dat")
 
-#function accepts two data points(X, and y coordinates) to calculate the actual distance between them. 
+#function accepts two data points(X, and y coordinates) to calculate the actual distance between them
 def distance(instance1, instance2, k):
     distance = 0
     mm1 = instance1[0]
@@ -42,7 +42,7 @@ def distance(instance1, instance2, k):
     distance -= k
     return distance
 
-
+#function  will find the distance of each point with every other point in training data and then we find all the nearest K neighbours and return all neighbours
 def getNeighbors(trainingSet, instance, k):
     distances = []
     for x in range(len(trainingSet)):
@@ -54,7 +54,7 @@ def getNeighbors(trainingSet, instance, k):
         neighbors.append(distances[x][0])
     return neighbors
 
-
+#function to identify the nearest neighbors
 def nearestClass(neighbors):
     classVote = {}
     for x in range(len(neighbors)):
